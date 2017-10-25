@@ -23,7 +23,7 @@ class Sketch : NSObject {
         
         // Set the difference for x
         dx = 3
-        
+     
     }
     
     // Runs in a loop, forever, to create the animated effect
