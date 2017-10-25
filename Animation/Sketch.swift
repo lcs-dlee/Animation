@@ -32,30 +32,25 @@ class Sketch : NSObject {
         // Increasing the offset
         offset += 1
         
-        // Draw an ellipse 1 on the bottom of the canvas
-        canvas.fillColor = Color.black
-        canvas.borderColor = Color.black
-        canvas.drawEllipse(centreX: x + offset, centreY: 50, width: 50, height: 50)
+        // Draw an ellipse 1
+        canvas.fillColor = Color.yellow
+        canvas.borderColor = Color.yellow
+        canvas.drawEllipse(centreX: x - offset, centreY: x - offset, width: 50, height: 50)
         
-        // Draw an ellipse 2 in the canvas
+        // Draw an ellipse 2
         canvas.fillColor = Color.blue
         canvas.borderColor = Color.blue
-        canvas.drawEllipse(centreX: x - offset, centreY: 150, width: 50, height: 50)
+        canvas.drawEllipse(centreX: x + offset, centreY: x - offset, width: 50, height: 50)
         
-        // Draw an ellipse 3 in the middle of the canvas
+        // Draw an ellipse 3
         canvas.fillColor = Color.green
         canvas.borderColor = Color.green
-        canvas.drawEllipse(centreX: x + offset, centreY: 250, width: 50, height: 50)
+        canvas.drawEllipse(centreX: x - offset, centreY: x + offset, width: 50, height: 50)
         
-        // Draw an ellipse 4 in the canvas
-        canvas.fillColor = Color.orange
-        canvas.borderColor = Color.orange
-        canvas.drawEllipse(centreX: x - offset, centreY: 350, width: 50, height: 50)
-        
-        // Draw an ellipse 5 in the top of the canvas
-        canvas.fillColor = Color.purple
-        canvas.borderColor = Color.purple
-        canvas.drawEllipse(centreX: x + offset, centreY: 450, width: 50, height: 50)
+        // Draw an ellipse 4
+        canvas.fillColor = Color.red
+        canvas.borderColor = Color.red
+        canvas.drawEllipse(centreX: x + offset, centreY: x + offset, width: 50, height: 50)
         
     }
     
