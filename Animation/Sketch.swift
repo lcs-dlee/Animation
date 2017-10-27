@@ -10,6 +10,9 @@ class Sketch : NSObject {
     var x : Int
     var y : Int
     
+    // Change of position
+    var dx : Int
+    
     // This function runs once
     override init() {
         
@@ -20,10 +23,14 @@ class Sketch : NSObject {
         x = 0
         y = 0
         
+        dx = 1
     }
     
     // Runs in a loop, forever, to create the animated effect
     func draw() {
+        
+        // Set change in position
+        x += dx
         
         // Change position
         let r : Double = 500
