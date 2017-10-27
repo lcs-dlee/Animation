@@ -47,14 +47,21 @@ class Sketch : NSObject {
         // Check the position_Bounce at the right edge
         if x > 500 {
             dx = -3
+        }
+        
+        // Check the position_Bounce at the top edge
+        if y > 500 {
             dy = -1
         }
         
         // Check the position_Bounce at the left edge
         if x < 0{
             dx = 3
-            dy = 1
-            
+        }
+        
+        // Check the position_Bounce at the bottom edge
+        if y < 0 {
+             dy = 1
         }
         
     }
