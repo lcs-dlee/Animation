@@ -26,10 +26,10 @@ class Sketch : NSObject {
     func draw() {
         
         // Change position
-        let r = 500
-        let s = 0
+        let r : Double = 500
+        let s : Double = 0
         let a = -0.008
-        y = a * (x - r) * (x - s)
+        y = Int( a * (Double(x) - r) * (Double(x) - s) )
         
         // Draw an ellipse in the middle of the canvas
         canvas.drawEllipse(centreX: x, centreY: y, width: 50, height: 50)
