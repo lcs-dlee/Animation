@@ -23,7 +23,8 @@ class Sketch : NSObject {
         x = 0
         y = 0
         
-        dx = 1
+        // Set change in position
+        dx = 3
     }
     
     // Runs in a loop, forever, to create the animated effect
