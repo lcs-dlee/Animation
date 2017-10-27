@@ -8,9 +8,11 @@ class Sketch : NSObject {
     
     // Position of circle
     var x : Int
+    var y : Int
     
     // Change of position
     var dx : Int
+    var dy : Int
     
     // This function runs once
     override init() {
@@ -19,11 +21,12 @@ class Sketch : NSObject {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 250
+        x = random(from: 0, toButNotIncluding: 501)
+        y = random(from: 0, toButNotIncluding: 501)
         
         // Set change in position
         dx = 3
-        
+        dy = 1
     }
     
     // Runs in a loop, forever, to create the animated effect
@@ -31,6 +34,7 @@ class Sketch : NSObject {
         
         // Change position
         x += dx
+        y += dy
         
         // Clear the background
         canvas.fillColor = Color.white
@@ -38,18 +42,20 @@ class Sketch : NSObject {
         
         // Draw an ellipse in the middle of the canvas
         canvas.fillColor = Color.black
-        canvas.drawEllipse(centreX: x, centreY: 250, width: 50, height: 50)
+        canvas.drawEllipse(centreX: x, centreY: y, width: 50, height: 50)
         
         // Check the position_Bounce at the right edge
         if x > 500 {
             dx = -3
+            dy = -1
         }
         
         // Check the position_Bounce at the left edge
         if x < 0{
-        dx = 3
+            dx = 3
+            dy = 1
+            
+        }
         
     }
-    
-}
 }
