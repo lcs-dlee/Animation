@@ -9,6 +9,9 @@ class Sketch : NSObject {
     // Position of circle
     var x : Int
     
+    // Change of position
+    var dx : Int
+    
     // This function runs once
     override init() {
         
@@ -18,13 +21,16 @@ class Sketch : NSObject {
         // Set starting position
         x = 250
         
+        // Set change in position
+        dx = 3
+        
     }
     
     // Runs in a loop, forever, to create the animated effect
     func draw() {
         
         // Change position
-        x += 1
+        x += dx
         
         // Clear the background
         canvas.fillColor = Color.white
@@ -34,7 +40,16 @@ class Sketch : NSObject {
         canvas.fillColor = Color.black
         canvas.drawEllipse(centreX: x, centreY: 250, width: 50, height: 50)
         
+        // Check the position_Bounce at the right edge
+        if x > 500 {
+            dx = -3
+        }
+        
+        // Check the position_Bounce at the left edge
+        if x < 0{
+        dx = 3
         
     }
     
+}
 }
