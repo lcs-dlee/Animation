@@ -8,6 +8,10 @@ class Sketch : NSObject {
     
     // Position of circle
     var x : Int
+    var y : Int
+    
+    // Change of position
+    var dx : Int
     
     // This function runs once
     override init() {
@@ -16,18 +20,27 @@ class Sketch : NSObject {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 250
+        x = 0
+        y = 0
         
+        // Set change in position
+        dx = 1
     }
     
     // Runs in a loop, forever, to create the animated effect
     func draw() {
         
+        // Set change in position
+        x += dx
+        
         // Change position
-        x += 1
+        let r : Double = 200
+        let s : Double = -100
+        let a = -0.022
+        y = Int( a * (Double(x) - r) * (Double(x) - s) )
         
         // Draw an ellipse in the middle of the canvas
-        canvas.drawEllipse(centreX: x, centreY: 250, width: 50, height: 50)
+        canvas.drawEllipse(centreX: x, centreY: y, width: 15, height: 15)
         
     }
     
