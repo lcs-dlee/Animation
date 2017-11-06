@@ -36,10 +36,15 @@ class Sketch : NSObject {
         // Change position
         let r : Double = 50
         let a = -0.022
-        y = Int( a * (Double(x) - r) * (Double(x) - r) + 500)
+        for k in stride(from: 500.0, to: 0.0, by: -100.0) {
+            y = Int( a * pow(Double(x) - r, 2) + k)
+            
+            // Draw an ellipse in the middle of the canvas
+            canvas.drawEllipse(centreX: x, centreY: y, width: 15, height: 15)
+
+        }
         
-        // Draw an ellipse in the middle of the canvas
-        canvas.drawEllipse(centreX: x, centreY: y, width: 15, height: 15)
+        
         
     }
     
