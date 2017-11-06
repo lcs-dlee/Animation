@@ -52,6 +52,10 @@ class Sketch : NSObject {
         canvas.fillColor = Color.black
         canvas.drawEllipse(centreX: x, centreY: y, width: 3, height: 3)
         
+        // Draw a line between two circles
+        canvas.drawLine(fromX: x, fromY: y, toX: y, toY: x)
+        canvas.lineColor = Color.black
+        
         // Check the position_Bounce at the right edge
         if x > 500{
             dx = -2
