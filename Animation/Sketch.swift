@@ -40,6 +40,9 @@ class Sketch : NSObject {
         canvas.fillColor = Color.white
         canvas.drawRectangle(centreX: 250, centreY: 250, width: 500, height: 500)
         
+        // Empty the Ellipse
+        canvas.drawShapesWithFill = false
+        
         // Draw a bigger ellipse in the middle of the canvas
         canvas.fillColor = Color.white
         canvas.drawEllipse(centreX: x, centreY: 250, width: 250, height: 250, borderWidth: 3)
@@ -48,22 +51,25 @@ class Sketch : NSObject {
         
         // Draw a smaller ellipse in the middle of the canvas
         canvas.fillColor = Color.white
-        canvas.drawEllipse(centreX: x, centreY: y, width: 50, height: 50, borderWidth: 3)
+        canvas.drawEllipse(centreX: x, centreY: y, width: 70, height: 70, borderWidth: 3)
         canvas.fillColor = Color.black
         canvas.drawEllipse(centreX: x, centreY: y, width: 3, height: 3)
         
+        // Back to Origin
+        canvas.drawShapesWithFill = true
+        
         // Draw a line between two circles
-        canvas.drawLine(fromX: x, fromY: y, toX: y, toY: x)
-        canvas.lineColor = Color.black
+        canvas.drawLine(fromX: x, fromY: 250, toX: x, toY: y)
+        canvas.lineColor = Color.red
         
         // Check the position_Bounce at the right edge
         if x > 500{
-            dx = -2
+            dx = -1
         }
         
         // Check the position_Bounce at the left edge
         if x < 0{
-            dx = 2
+            dx = 1
             
         }
         
